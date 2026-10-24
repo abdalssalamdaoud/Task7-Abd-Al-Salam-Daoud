@@ -2,9 +2,9 @@ const express = require('express');
 const morgan = require('morgan');
 require('dotenv').config();
 
-const userRoutes = require('./routes/users.routes.js');
-const postsRoutes = require('./routes/posts.routes.js');
-const commentsRoutes = require('./routes/comments.routes.js');
+const userRoutes = require('./routes/users.routes');
+const postsRoutes = require('./routes/posts.routes');
+const commentsRoutes = require('./routes/comments.routes');
 
 const app = express();
 
@@ -16,8 +16,7 @@ app.use('/api/v1/posts', postsRoutes);
 app.use('/api/v1/comments', commentsRoutes);
 
 app.get('/', (req, res) => {
-  res.send('Hello World');
+    res.send("Hello World");
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log('Server running on'));
+app.listen(3000, () => console.log("server is running"));
